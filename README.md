@@ -1,4 +1,5 @@
-# hackathon
+# Hackaton #1
+
 Хакатон Result, база JS
 
 GitFlow
