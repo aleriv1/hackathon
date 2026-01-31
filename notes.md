@@ -13,3 +13,8 @@
 Вопросы по счётчкику
 
 ### Eduard
+
+### Ivan
+
+В trigger --
+else

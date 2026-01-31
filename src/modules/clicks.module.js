@@ -50,6 +50,8 @@ export class ClicksModule extends Module {
         // if (this.active) this.singleClicks++;
         if (!this.active) return
 
+        if (this.clickTimeout) return
+
         // убеждаемся, что это не двойной клик
         this.clickTimeout = setTimeout(() => {
             this.singleClicks++
