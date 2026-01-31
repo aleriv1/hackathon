@@ -1,3 +1,5 @@
+// #region Anastasiya, message module
+
 export function random(min, max) {
   return Math.round(min - 0.5 + Math.random() * (max - min + 1))
 }
@@ -8,6 +10,10 @@ export function getRandomColor() {
   const b = Math.floor(Math.random() * 256);
   return `rgb(${r}, ${g}, ${b})`;
 }
+
+// #endregion Anastasiya, message module
+
+// #region Ivan, shape module
 
 export function randomSize(min, max) {
   const width = Math.floor(Math.random() * (max - min + 1)) + min
@@ -67,3 +73,5 @@ export function randomShape() {
   const shapes = ['circle', 'square', 'rounded', 'ellipse']
   return shapes[Math.floor(Math.random() * shapes.length)]
 }
+
+// #endregion Ivan, shape module

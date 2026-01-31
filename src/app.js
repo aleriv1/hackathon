@@ -9,8 +9,10 @@ import { ShapeModule } from './modules/shape.module'
 const menu = new ContextMenu('.menu')
 
 menu.add(new MessageModule('message', 'Вызывать сообщение'))
+
 menu.add(new ClicksModule('Считать клики'))
 
 menu.add(new SnowModule())
 menu.add(new BackgroundModule())
+
 menu.add(new ShapeModule())

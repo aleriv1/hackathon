@@ -1,5 +1,5 @@
 import { Module } from '../../core/module';
-import { getRandomColor, random } from './utils';
+import { getRandomColor, random } from '../../utils';
 import './message.css';
 
 export default class MessageModule extends Module {
@@ -9,10 +9,6 @@ export default class MessageModule extends Module {
     }
 
     trigger() {
-        //импортированная функция, дает рандомное число из указанных
-        const resultOfRandomNumber = random(0, 19)
-        //импортированная функция, дает рандомный цвет
-        const resultOfRandomColor = getRandomColor()
 
         //массив случайных сообщений
         const messages = [
@@ -27,6 +23,14 @@ export default class MessageModule extends Module {
             'Сделай 30 отжиманий',
             'Выпрями спину!',
         ]
+
+        //импортированная функция, дает рандомное число из указанных
+        // const resultOfRandomNumber = random(0, 19)
+        const resultOfRandomNumber = random(0, messages.length - 1)
+        //импортированная функция, дает рандомный цвет
+        const resultOfRandomColor = getRandomColor()
+
+
         const result = messages.find((item, index) => {
             return index === resultOfRandomNumber
         })

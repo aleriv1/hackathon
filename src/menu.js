@@ -31,7 +31,6 @@ export class ContextMenu extends Menu {
   }
 
   open(x, y) {
-    console.log('open')
     if (this.modules.length === 0) {
       console.log('module.length === 0')
       this.el.innerHTML = `
@@ -42,7 +41,6 @@ export class ContextMenu extends Menu {
 
     } else {
 
-      // return
       this.el.innerHTML = ''
       this.modules.forEach(module => {
         this.el.insertAdjacentHTML('beforeend', module.toHTML())
