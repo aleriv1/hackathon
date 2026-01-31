@@ -1,9 +1,10 @@
-import { Module } from '././core/module';
-import { getRandomColor, random } from './src/utils';
-import './message/message.css';
+import { Module } from '../../core/module';
+import { getRandomColor, random } from './utils';
+import './message.css';
 
 export default class MessageModule extends Module {
-    constructor (type, text) {
+    constructor(type, text) {
+        // super('message', 'Вызвать сообщение')
         super(type, text)
     }
 
