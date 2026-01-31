@@ -47,5 +47,6 @@ export class ClicksModule extends Module {
     }
 }
 
+
 // const counter = new ClicksModule(); 
 // counter.trigger();
