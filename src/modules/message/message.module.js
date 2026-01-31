@@ -1,6 +1,5 @@
 import { Module } from '././core/module';
-import { getRandomColor } from '././utils';
-import { random } from '././utils';
+import { getRandomColor, random } from './src/utils';
 import './message/message.css';
 
 export default class MessageModule extends Module {
