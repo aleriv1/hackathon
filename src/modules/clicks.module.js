@@ -2,7 +2,7 @@ import { Module } from "../core/module";
 
 export class ClicksModule extends Module {
     constructor() {
-        this.timeLimit = timeLimit;
+        super('Clicks module');
         this.singleClicks = 0;
         this.doubleClicks = 0;
         this.timer = null;
@@ -13,7 +13,7 @@ export class ClicksModule extends Module {
         this.stop = this.stop.bind(this);
     }
 
-    start() {
+    trigger() {
         const timer = prompt('Введите количество секунд:');
         const duration = Number(timer) * 1000;
 
@@ -26,7 +26,7 @@ export class ClicksModule extends Module {
         document.addEventListener('click', this.handleClick);
         document.addEventListener('dblclick', this.handleDoubleClick);
 
-        his.timerId = setTimeout(this.stop, duration);
+        this.timer = setTimeout(this.stop, duration);
     }
 
     stop() {
@@ -35,7 +35,7 @@ export class ClicksModule extends Module {
         document.removeEventListener('click', this.handleClick);
         document.removeEventListener('dblclick', this.handleDoubleClick);
 
-        alert(`Статистика:\nОдиночные клики:, ${this.singleClicks}\nДвойные клики:, ${this.doubleClicks}`);
+        alert(`Статистика:\nОдиночные клики: ${this.singleClicks}\nДвойные клики: ${this.doubleClicks}`);
     }
 
     handleClick() {
@@ -46,3 +46,6 @@ export class ClicksModule extends Module {
         if (this.active) this.doubleClicks++;
     }
 }
+
+// const counter = new ClicksModule(); 
+// counter.trigger();
