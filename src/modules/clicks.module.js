@@ -13,38 +13,46 @@ export class ClicksModule extends Module {
         this.stop = this.stop.bind(this);
     }
 
-    trigger() {
-        const timer = prompt('Введите количество секунд:');
-        const duration = Number(timer) * 1000;
+trigger() {
+    const timer = prompt("Введите количество секунд:");
+    const duration = Number(timer) * 1000;
 
-        if (!Number.isFinite(duration) || duration <= 0) return;
+    if (!Number.isFinite(duration) || duration <= 0) return;
 
-        this.singleClicks = 0;
-        this.doubleClicks = 0;
-        this.active = true;
+    this.singleClicks = 0;
+    this.doubleClicks = 0;
+    this.active = true;
 
-        document.addEventListener('click', this.handleClick);
-        document.addEventListener('dblclick', this.handleDoubleClick);
+    setTimeout(() => {
+      if (!this.active) return;
 
-        this.timer = setTimeout(this.stop, duration);
-    }
+      document.addEventListener("click", this.handleClick);
+      document.addEventListener("dblclick", this.handleDoubleClick);
+    });
 
-    stop() {
-        this.active = false;
+    this.timer = setTimeout(this.stop, duration);
+  }
 
-        document.removeEventListener('click', this.handleClick);
-        document.removeEventListener('dblclick', this.handleDoubleClick);
+  stop() {
+    this.active = false;
 
-        alert(`Статистика:\nОдиночные клики: ${this.singleClicks}\nДвойные клики: ${this.doubleClicks}`);
-    }
+    document.removeEventListener("click", this.handleClick);
+    document.removeEventListener("dblclick", this.handleDoubleClick);
 
-    handleClick() {
-        if (this.active) this.singleClicks++;
-    }
+    clearTimeout(this.clickTimer);
 
-    handleDoubleClick() {
-        if (this.active) this.doubleClicks++;
-    }
+    alert(
+      `Статистика:\nОдиночные клики: ${this.singleClicks}\nДвойные клики: ${this.doubleClicks}`
+    );
+  }
+
+  handleClick() {
+    if (this.active) this.singleClicks++;
+  }
+
+  handleDoubleClick() {
+    if (this.active) this.doubleClicks++;
+  }
 }
 
 
