@@ -24,7 +24,7 @@ export function randomHex() {
   const hex = "0123456789ABCDEF"
   let color = "#"
 
-  for (let i = 0; i <= 8; i++) {
+  for (let i = 0; i <= 7; i++) {
     color += hex[Math.floor(Math.random() * 16)]
   }
   return color
