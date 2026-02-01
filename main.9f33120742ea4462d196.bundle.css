@@ -1,0 +1,244 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  width: 100%;
+  padding: 2rem;
+}
+.menu {
+  position: fixed;
+  z-index: 1000;
+  width: 150px;
+  background: #1b1a1a;
+  border-radius: 5px;
+  display: none;
+  list-style: none;
+}
+
+.menu.open {
+  display: block;
+}
+
+.menu .menu-item {
+  padding: 8px 10px;
+  font-size: 1rem;
+  color: #eee;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in;
+  border-radius: inherit;
+}
+
+.menu .menu-item:hover {
+  background: #343434;
+}
+.NGpMpiW3CGsXyGNHIwjO {
+    display: flex;
+    font-size: 32px;
+    font-weight: bold;
+    border: solid black 5px;
+    border-radius: 20px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 450px;
+    height: 100px;
+    text-align: center;
+    align-items: center;
+}
+.LtbpMd3b2oLww7opC0SZ {
+  position: fixed;
+  top: -10px;
+  color: lightblue;
+  z-index: 100;
+  pointer-events: none;
+  user-select: none;
+  animation-name: OxByV81aRTOMyX4FJnbk;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes OxByV81aRTOMyX4FJnbk {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0.8;
+  }
+}
+.JRGTqI_wFT5QTO8SJcbW {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 300px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  font-weight: 700;
+  border: 1px solid red;
+}
+.DwB54E0llchKxtw04q5s {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  padding: 30px;
+  margin: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 15px;
+}
+/* общий контейнер модуля */
+.Qp0vQFoRxa0ULFeJ2a4r {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+
+  width: 320px;
+  max-height: 70vh;
+  overflow-y: auto;
+
+  background: #121212;
+  border-radius: 12px;
+  padding: 12px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #fff;
+
+  z-index: 1000;
+}
+
+/* один трек */
+.I4hTxfHzx0McYFVU5wyD {
+  border-radius: 10px;
+  background: #1c1c1c;
+  margin-bottom: 10px;
+  overflow: hidden;
+  transition: background 0.2s ease;
+}
+
+.I4hTxfHzx0McYFVU5wyD:last-child {
+  margin-bottom: 0;
+}
+
+/* шапка трека */
+.yZHAcOyRM_rjk5AQKaQs {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  padding: 10px 12px;
+  cursor: pointer;
+
+  background: #1c1c1c;
+  transition: background 0.2s ease;
+}
+
+.yZHAcOyRM_rjk5AQKaQs:hover {
+  background: #262626;
+}
+
+/* название */
+.yZHAcOyRM_rjk5AQKaQs span:first-child {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+/* автор */
+.yZHAcOyRM_rjk5AQKaQs span:last-child {
+  font-size: 12px;
+  color: #9a9a9a;
+}
+
+/* панель управления */
+.l4240ZJr_WcGoI9jUtg1 {
+  padding: 10px 12px;
+  background: #181818;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* кнопка play */
+.l4240ZJr_WcGoI9jUtg1 button {
+  align-self: flex-start;
+
+  background: #2d2d2d;
+  border: none;
+  border-radius: 6px;
+
+  color: #fff;
+  font-size: 14px;
+  padding: 6px 12px;
+
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.l4240ZJr_WcGoI9jUtg1 button:hover {
+  background: #3a3a3a;
+}
+
+/* range inputs */
+.l4240ZJr_WcGoI9jUtg1 input[type="range"] {
+  width: 100%;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: #333;
+  outline: none;
+}
+
+/* бегунок */
+.l4240ZJr_WcGoI9jUtg1 input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+
+.l4240ZJr_WcGoI9jUtg1 input[type="range"]::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #fff;
+  cursor: pointer;
+}
+
+.ZUfuGDO4caD3AG8zV9Lq {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 28px;
+  height: 28px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #2a2a2a;
+  color: #fff;
+  font-size: 16px;
+  line-height: 1;
+
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.ZUfuGDO4caD3AG8zV9Lq:hover {
+  background: #3a3a3a;
+}
