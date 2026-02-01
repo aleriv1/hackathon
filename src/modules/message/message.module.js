@@ -1,6 +1,6 @@
 import { Module } from '../../core/module';
 import { getRandomColor, random } from '../../utils';
-import './message.css';
+import styles from './message.module.css';
 
 export default class MessageModule extends Module {
     constructor(type, text) {
@@ -25,7 +25,7 @@ export default class MessageModule extends Module {
 
     createMessageElement(text, color) {
         const messageElement = document.createElement('p')
-        messageElement.className = 'message-element';
+        messageElement.className = styles['message-element'];
         messageElement.textContent = text
         messageElement.style.background = color
         document.body.append(messageElement)
