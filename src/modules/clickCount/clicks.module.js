@@ -1,7 +1,8 @@
 import { Module } from "../../core/module";
+import styles from './clicks.module.css'
+import { getRandomColor } from "../../utils";
 
 export class ClicksModule extends Module {
-    // constructor() {
     constructor(text) {
         super('Clicks module', text);
         this.singleClicks = 0;
@@ -13,12 +14,35 @@ export class ClicksModule extends Module {
         this.handleDoubleClick = this.handleDoubleClick.bind(this);
         this.stop = this.stop.bind(this);
 
-        // поле для таймера проверки
         this.clickTimeout = null
+
+        this.clickCountMessageEl = null
+    }
+
+    createMessageElement(text) {
+        this.clickCountMessageEl = document.createElement('p')
+        this.clickCountMessageEl.className = styles['click-statistics']
+        this.clickCountMessageEl.textContent = text
+        this.clickCountMessageEl.style.backgroundColor = getRandomColor()
+        document.body.append(this.clickCountMessageEl)
+    }
+
+    showMessage(message) {
+        this.createMessageElement(message)
+
+        setTimeout(() => {
+            this.clickCountMessageEl.remove()
+            this.clickCountMessageEl = null
+        }, 5000)
     }
 
     trigger() {
         const timer = prompt('Введите количество секунд:');
+        if (!timer) {
+            const message = `Жизнь не клик... и правильно!`
+            this.showMessage(message)
+        }
+
         const duration = Number(timer) * 1000;
 
         if (!Number.isFinite(duration) || duration <= 0) return;
@@ -44,9 +68,9 @@ export class ClicksModule extends Module {
 
         clearTimeout(this.clickTimer);
 
-        alert(
-            `Статистика:\nОдиночные клики: ${this.singleClicks}\nДвойные клики: ${this.doubleClicks}`
-        );
+        const message = `Статистика:\nОдиночные клики: ${this.singleClicks}\nДвойные клики: ${this.doubleClicks}`
+
+        this.showMessage(message)
     }
 
     handleClick() {
@@ -62,7 +86,6 @@ export class ClicksModule extends Module {
     }
 
     handleDoubleClick() {
-        // if (this.active) this.doubleClicks++;
         if (!this.active) return
 
         if (this.clickTimeout) {
@@ -70,6 +93,5 @@ export class ClicksModule extends Module {
             this.clickTimeout = null
         }
         this.doubleClicks++
-        console.log('this.doubleClicks', this.doubleClicks)
     }
 }

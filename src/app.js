@@ -10,6 +10,7 @@ import { TimerModule } from './modules/timer/timer.module'
 import { ClicksModule } from './modules/clickCount/clicks.module'
 
 import { ShapeModule } from './modules/randomShape/shape.module'
+import { SoundModule } from './modules/randomSound/sound.module'
 
 const menu = new ContextMenu('.menu')
 
@@ -22,3 +23,4 @@ menu.add(new BackgroundModule())
 menu.add(new TimerModule())
 
 menu.add(new ShapeModule())
+menu.add(new SoundModule())
