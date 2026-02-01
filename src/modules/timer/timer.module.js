@@ -1,4 +1,5 @@
-import { Module } from '../core/module';
+import styles from './timer.module.css';
+import { Module } from '../../core/module';
 
 export class TimerModule extends Module {
   constructor() {
@@ -28,7 +29,7 @@ export class TimerModule extends Module {
     let timeLeft = seconds;
 
     const $timerEl = document.createElement('div');
-    $timerEl.className = 'timer';
+    $timerEl.className = styles.timer;
     document.body.append($timerEl);
 
     this.$timerEl = $timerEl;

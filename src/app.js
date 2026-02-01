@@ -1,15 +1,15 @@
-import './styles.css'
-import { ContextMenu } from './menu'
+import './shared/styles/global.css'
+import { ContextMenu } from './menu/menu'
 
 import MessageModule from './modules/message/message.module'
 
-import { SnowModule } from './modules/snowFlakes.module'
-import { BackgroundModule } from './modules/background.module'
-import { TimerModule } from './modules/timer.module'
+import { SnowModule } from './modules/snowflakes/snowFlakes.module'
+import { BackgroundModule } from './modules/randomBackgroundColor/background.module'
+import { TimerModule } from './modules/timer/timer.module'
 
-import { ClicksModule } from './modules/clicks.module'
+import { ClicksModule } from './modules/clickCount/clicks.module'
 
-import { ShapeModule } from './modules/shape.module'
+import { ShapeModule } from './modules/randomShape/shape.module'
 
 const menu = new ContextMenu('.menu')
 

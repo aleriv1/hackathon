@@ -1,4 +1,5 @@
-import { Module } from '../core/module';
+import styles from './snowFlakes.module.css';
+import { Module } from '../../core/module';
 
 export class SnowModule extends Module {
   constructor() {
@@ -17,7 +18,7 @@ export class SnowModule extends Module {
 
   createSnowflake() {
     const snowflake = document.createElement('div');
-    snowflake.className = 'snowflake';
+    snowflake.className = styles.snowflake;
     snowflake.textContent = '❄';
     Object.assign(snowflake.style, {
       left: `${Math.random() * window.innerWidth}px`,

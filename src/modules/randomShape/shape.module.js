@@ -1,5 +1,5 @@
-import { Module } from '../core/module'
-import { randomSize, randomHex, angleColor, radialGradient, conicGradient, randomShape } from "../utils"
+import { Module } from '../../core/module'
+import { randomSize, randomHex, angleColor, radialGradient, conicGradient, randomShape } from "../../utils"
 
 export class ShapeModule extends Module {
 

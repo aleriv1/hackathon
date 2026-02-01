@@ -1,5 +1,5 @@
-import { Module } from '../core/module';
-import { randomHex } from '../utils';
+import { Module } from '../../core/module';
+import { randomHex } from '../../utils';
 
 export class BackgroundModule extends Module {
   constructor() {

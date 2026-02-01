@@ -1,0 +1,23 @@
+.snowflake {
+  position: fixed;
+  top: -10px;
+  color: lightblue;
+  z-index: 100;
+  pointer-events: none;
+  user-select: none;
+  animation-name: fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(100vh) rotate(360deg);
+    opacity: 0.8;
+  }
+}
