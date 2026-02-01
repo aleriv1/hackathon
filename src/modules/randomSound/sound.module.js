@@ -1,10 +1,39 @@
 import { Module } from "../../core/module";
 import styles from './sound.module.css'
 
+// const TRACKS = [
+//     { id: 1, author: "ANNA_ASTI", name: "По барам", src: "../assets/audio/ANNA_ASTI_Po_baram.mp3" },
+//     { id: 2, author: "Кравц и Гио Пика", name: "Где прошла ты", src: "../assets/audio/Kravc_Gio_Pika_Gde_proshla_ty.mp3" },
+//     { id: 2, author: "Ваня Дмитриенко", name: "Шёлк", src: "../assets/audio/Ваня_Дмитриенко_Шёлк.mp3" }
+// ];
+
+
+
+const BASE =
+    window.location.hostname === 'localhost'
+        ? ''
+        : '/hackathon';
+
+
 const TRACKS = [
-    { id: 1, author: "ANNA_ASTI", name: "По барам", src: "../assets/audio/ANNA_ASTI_Po_baram.mp3" },
-    { id: 2, author: "Кравц и Гио Пика", name: "Где прошла ты", src: "../assets/audio/Kravc_Gio_Pika_Gde_proshla_ty.mp3" },
-    { id: 2, author: "Ваня Дмитриенко", name: "Шёлк", src: "../assets/audio/Ваня_Дмитриенко_Шёлк.mp3" }
+    {
+        id: 1,
+        author: "ANNA_ASTI",
+        name: "По барам",
+        src: `${BASE}/audio/ANNA_ASTI_Po_baram.mp3`
+    },
+    {
+        id: 2,
+        author: "Кравц и Гио Пика",
+        name: "Где прошла ты",
+        src: `${BASE}/audio/Kravc_Gio_Pika_Gde_proshla_ty.mp3`
+    },
+    {
+        id: 3,
+        author: "Ваня Дмитриенко",
+        name: "Шёлк",
+        src: `${BASE}/audio/Ваня_Дмитриенко_Шёлк.mp3`
+    }
 ];
 
 class Engine {
