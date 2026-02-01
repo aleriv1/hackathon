@@ -5,6 +5,7 @@ export class SnowModule extends Module {
     super('snow', 'Снегопад');
     this.snowInterval = null;
     this.$snowflakes = [];
+    this.$body = document.body;
   }
 
   trigger() {
@@ -16,10 +17,10 @@ export class SnowModule extends Module {
   }
 
   createSnowflake() {
-    const snowflake = document.createElement('div');
-    snowflake.className = 'snowflake';
-    snowflake.textContent = '❄';
-    Object.assign(snowflake.style, {
+    const $snowflake = document.createElement('div');
+    $snowflake.className = 'snowflake';
+    $snowflake.textContent = '❄';
+    Object.assign($snowflake.style, {
       left: `${Math.random() * window.innerWidth}px`,
       fontSize: `${Math.random() * 10 + 10}px`,
       opacity: Math.random(),
@@ -27,15 +28,15 @@ export class SnowModule extends Module {
       animationDelay: `${Math.random() * 5}s`,
     });
 
-    document.body.appendChild(snowflake);
-    this.$snowflakes.push(snowflake);
+    this.$body.appendChild($snowflake);
+    this.$snowflakes.push($snowflake);
 
     setTimeout(
       () => {
-        snowflake.remove();
-        this.$snowflakes = this.$snowflakes.filter((el) => el !== snowflake);
+        $snowflake.remove();
+        this.$snowflakes = this.$snowflakes.filter((el) => el !== $snowflake);
       },
-      parseFloat(snowflake.style.animationDuration) * 1000
+      parseFloat($snowflake.style.animationDuration) * 1000
     );
   }
 
