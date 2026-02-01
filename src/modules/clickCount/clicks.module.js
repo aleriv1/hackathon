@@ -39,19 +39,21 @@ export class ClicksModule extends Module {
     stop() {
         this.active = false;
 
-        document.removeEventListener('click', this.handleClick);
-        document.removeEventListener('dblclick', this.handleDoubleClick);
+        document.removeEventListener("click", this.handleClick);
+        document.removeEventListener("dblclick", this.handleDoubleClick);
 
-        alert(`Статистика:\nОдиночные клики: ${this.singleClicks}\nДвойные клики: ${this.doubleClicks}`);
+        clearTimeout(this.clickTimer);
+
+        alert(
+            `Статистика:\nОдиночные клики: ${this.singleClicks}\nДвойные клики: ${this.doubleClicks}`
+        );
     }
 
     handleClick() {
-        // if (this.active) this.singleClicks++;
         if (!this.active) return
 
         if (this.clickTimeout) return
 
-        // убеждаемся, что это не двойной клик
         this.clickTimeout = setTimeout(() => {
             this.singleClicks++
             this.clickTimeout = null
