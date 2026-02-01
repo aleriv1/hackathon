@@ -4,7 +4,6 @@ import './message.css';
 
 export default class MessageModule extends Module {
     constructor(type, text) {
-        // super('message', 'Вызвать сообщение')
         super(type, text)
     }
 

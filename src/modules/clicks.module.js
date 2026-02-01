@@ -3,7 +3,6 @@ import { Module } from "../core/module";
 export class ClicksModule extends Module {
     // constructor() {
     constructor(text) {
-        // super('Clicks module');
         super('Clicks module', text);
         this.singleClicks = 0;
         this.doubleClicks = 0;
@@ -72,7 +71,3 @@ export class ClicksModule extends Module {
         console.log('this.doubleClicks', this.doubleClicks)
     }
 }
-
-
-// const counter = new ClicksModule();
-// counter.trigger();
