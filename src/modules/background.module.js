@@ -1,4 +1,5 @@
 import { Module } from '../core/module';
+import { randomHex } from '../utils';
 
 export class BackgroundModule extends Module {
   constructor() {
@@ -11,24 +12,13 @@ export class BackgroundModule extends Module {
     if (this.color) {
       const chooseNew = confirm('Хотите выбрать новый цвет?');
       if (chooseNew) {
-        this.color = this.getRandomHexColor();
+        this.color = randomHex();
       }
     } else {
-      this.color = this.getRandomHexColor();
+      this.color = randomHex();
     }
 
     this.$body.style.backgroundColor = this.color;
     localStorage.setItem('appBgColor', this.color);
-  }
-
-  getRandomHexColor() {
-    const hex = '0123456789abcdef';
-    let color = '#';
-
-    for (let i = 0; i < 6; i++) {
-      color += hex[Math.floor(Math.random() * 16)];
-    }
-
-    return color;
   }
 }
