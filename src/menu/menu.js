@@ -32,21 +32,10 @@ export class ContextMenu extends Menu {
   }
 
   open(x, y) {
-    if (this.modules.length === 0) {
-      console.log('module.length === 0')
-      this.el.innerHTML = `
-      <li class="menu-item" data-type="dummy">Поменять фон</li>
-      <li class="menu-item" data-type="dummy">Создать фигуру</li>
-      <li class="menu-item" data-type="dummy">Считать клики</li>
-    `;
-
-    } else {
-
-      this.el.innerHTML = ''
-      this.modules.forEach(module => {
-        this.el.insertAdjacentHTML('beforeend', module.toHTML())
-      })
-    }
+    this.el.innerHTML = ''
+    this.modules.forEach(module => {
+      this.el.insertAdjacentHTML('beforeend', module.toHTML())
+    })
     this.el.classList.add('open')
     this.isOpen = true
 
