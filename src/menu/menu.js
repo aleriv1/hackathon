@@ -47,11 +47,23 @@ export class ContextMenu extends Menu {
         this.el.insertAdjacentHTML('beforeend', module.toHTML())
       })
     }
-
-    this.el.style.left = `${x}px`
-    this.el.style.top = `${y}px`
     this.el.classList.add('open')
     this.isOpen = true
+
+    const menuWidth = this.el.offsetWidth
+    const menuHeight = this.el.offsetHeight
+
+    const maxX = window.innerWidth - menuWidth - 10
+    const maxY = window.innerHeight - menuHeight - 10
+
+    let finalX = x
+    let finalY = y
+
+    if (x > maxX) finalX = maxX
+    if (y > maxY) finalY = maxY
+
+    this.el.style.left = `${finalX}px`
+    this.el.style.top = `${finalY}px`
   }
 
   close() {
