@@ -37,6 +37,8 @@ module.exports = (env, argv) => {
       port: '3000',
       open: true,
       hot: true,
+      watchContentBase: true,
+      contentBase: path.resolve(__dirname, 'src'),
     },
     devtool: isDev ? 'source-map' : false,
     plugins: [
