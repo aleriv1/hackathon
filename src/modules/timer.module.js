@@ -5,6 +5,7 @@ export class TimerModule extends Module {
     super('timer', 'Таймер отсчёта');
     this.$timerEl = null;
     this.interval = null;
+    this.$body = document.body;
   }
 
   trigger() {
@@ -29,7 +30,7 @@ export class TimerModule extends Module {
 
     const $timerEl = document.createElement('div');
     $timerEl.className = 'timer';
-    document.body.append($timerEl);
+    this.$body.append($timerEl);
 
     this.$timerEl = $timerEl;
 
