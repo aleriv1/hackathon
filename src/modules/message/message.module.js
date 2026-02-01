@@ -3,18 +3,8 @@ import { getRandomColor, random } from './src/utils';
 import './message/message.css';
 
 export default class MessageModule extends Module {
-    constructor (type, text) {
-        super(type, text)
-    }
-
-    trigger() {
-        //импортированная функция, дает рандомное число из указанных
-        const resultOfRandomNumber = random(0, 19)
-        //импортированная функция, дает рандомный цвет
-        const resultOfRandomColor = getRandomColor()
-
-        //массив случайных сообщений
-        const messages = [
+    //массив случайных сообщений
+        static messages = [
             'Прекрасно выглядите!',
             'Самое лучшее случайное сообщение!',
             'Самое худшее случайное сообщение!',
@@ -25,19 +15,34 @@ export default class MessageModule extends Module {
             'Пейте больше воды!',
             'Сделай 30 отжиманий',
             'Выпрями спину!',
-        ]
-        const result = messages.find((item, index) => {
-            return index === resultOfRandomNumber
-        })
+        ];
+
+        constructor (type, text) {
+        super(type, text)
+    }
+
+    trigger() {
+        //импортированная функция, дает рандомное число из указанных
+        const resultOfRandomNumber = random(0, MessageModule.messages.length - 1);
+        //импортированная функция, дает рандомный цвет
+        const resultOfRandomColor = getRandomColor();
+
+        
+        const result = MessageModule.messages[resultOfRandomNumber];
+
         const messageElement = document.createElement('div');
         messageElement.className = 'message-element';
-        messageElement.innerText = result;
-        messageElement.style.background = resultOfRandomColor;
+        messageElement.textContent = result;
+        messageElement.style.backgroundColor = resultOfRandomColor;
         document.body.appendChild(messageElement);
 
-        function removeElement() {
-            messageElement.remove()
+        this.removeElementAfterTimeOut(messageElement, 3000);
+    }
+
+        removeElementAfterTimeOut(element, timeout) {
+            function removeElement() {
+            element.remove()
         }
-        setTimeout(removeElement, 3000)
+        setTimeout(removeElement, timeout)
     }
 }
